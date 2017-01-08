@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10EEA7C6-1C72-4A7D-87CF-6E0FA7F6F390}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CASC.NET</RootNamespace>
+    <AssemblyName>CASC.NET</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuildConfiguration.cs" />
+    <Compile Include="CASC.cs" />
+    <Compile Include="CDNs.cs" />
+    <Compile Include="ContentConfiguration.cs" />
+    <Compile Include="Games\Wow.cs" />
+    <Compile Include="Implementation\DistantProvider.cs" />
+    <Compile Include="Games\GameProvider.cs" />
+    <Compile Include="Implementation\LocalProvider.cs" />
+    <Compile Include="Implementation\Provider.cs" />
+    <Compile Include="IO\BLTE.cs" />
+    <Compile Include="KeyValueConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structures\UnsafeStructures.cs" />
+    <Compile Include="TokenConfig.cs" />
+    <Compile Include="Utils\ByteArrayComparer.cs" />
+    <Compile Include="Utils\Extensions\IOExtensions.cs" />
+    <Compile Include="Utils\FastMarshal.cs" />
+    <Compile Include="Utils\IO\BigEndianBitConverter.cs" />
+    <Compile Include="Utils\IO\EndianBinaryReader.cs" />
+    <Compile Include="Utils\IO\EndianBitConverter.cs" />
+    <Compile Include="Utils\IO\LittleEndianBitConverter.cs" />
+    <Compile Include="Utils\IO\NonClosingStreamWrapper.cs" />
+    <Compile Include="Utils\IO\UnbufferedStreamReader.cs" />
+    <Compile Include="Utils\JenkinsHashing.cs" />
+    <Compile Include="Utils\Net\AsyncClient.cs" />
+    <Compile Include="Utils\SizeCache.cs" />
+    <Compile Include="Utils\UnsafeNativeMethods.cs" />
+    <Compile Include="Versions.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
