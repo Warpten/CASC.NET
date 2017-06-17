@@ -69,10 +69,12 @@ namespace CASC.NET.Implementation
                 using (var rootClient = new AsyncClient(ServerInfo.Hosts[0]))
                 {
                     rootClient.Send($"/{ServerInfo.Path}/data/{rootEncodingEntry.Item2[0]:x2}/{rootEncodingEntry.Item2[1]:x2}/{rootEncodingEntry.Item2.ToHexString()}");
-                    if (!rootClient.Failed)
-                        using (var rootBlte = new BLTE(rootClient.Stream, 0, rootClient.ContentLength))
-                            if (LoadRoot(rootBlte))
-                                break;
+                    if (rootClient.Failed)
+                        continue;
+
+                    using (var rootBlte = new BLTE(rootClient.Stream, 0, rootClient.ContentLength))
+                        if (LoadRoot(rootBlte))
+                            break;
                 }
             }
 
